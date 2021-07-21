@@ -15,7 +15,7 @@ export default function Form(props) {
 		setForm(member);
 	};
 	return (
-		<div>
+		<div className="form">
 			<form onSubmit={handleSubmit}>
 				<label>
 					Name
@@ -38,14 +38,12 @@ export default function Form(props) {
 					/>
 				</label>
 				<label>
-					Role{" "}
-					<input
-						type="text"
-						id="role"
-						name={"role"}
-						value={member.role}
-						onChange={handleChange}
-					/>
+					Role
+					<select value={member.role} onChange={handleChange} name="role">
+						<option value=""></option>
+						<option value="Black Hat">Black Hat</option>
+						<option value="White Hat">White Hat</option>
+					</select>
 				</label>
 				<button>Add</button>
 			</form>

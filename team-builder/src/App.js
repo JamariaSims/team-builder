@@ -17,13 +17,16 @@ function App() {
 	return (
 		<div className="App">
 			<Form form={form} setForm={setForm} />
-			{data.map((x, index) => (
-				<div>
-					<p>{x["name"]}</p>
-					<p>{x["email"]}</p>
-					<p>{x["role"]}</p>
-				</div>
-			))}
+			{data.map((x, index) =>
+				x.name === "" ? null : (
+					<div className="returnForm">
+						<p>{x["name"]}</p>
+						<p>{x["email"]}</p>
+						<p>{x["role"]}</p>
+						<button>Edit</button>
+					</div>
+				)
+			)}
 		</div>
 	);
 }
